@@ -21,6 +21,8 @@ jobs:
     runs-on: self-hosted
     container:
       image: ubuntu:18.04
+      volumes:
+        - my_docker_volume:/volume_mount
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
