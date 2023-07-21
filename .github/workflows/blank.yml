@@ -37,4 +37,6 @@ jobs:
           ls -lah
           pwd
           cat /etc/os*
-          ls /volume_mount
+          ls /volume_mount -lah
+          ls / -lah
+          
