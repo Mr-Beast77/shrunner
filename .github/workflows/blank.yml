@@ -30,3 +30,4 @@ jobs:
           nproc
           free -h
           ls -lah
+          pwd
