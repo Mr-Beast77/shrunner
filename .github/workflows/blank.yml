@@ -23,7 +23,7 @@ jobs:
       image: ubuntu:18.04
       volumes:
         - my_docker_volume:/volume_mount
-        - ~:/destination/directory
+        - /home/mrbeast77bd:/destination/directory
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
