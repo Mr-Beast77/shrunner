@@ -5,11 +5,17 @@ jobs:
   Test:
     name: test
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
-      - name: show os
-        run: cat /etc/os*
       - name: env
         run: env
+      - name: show
+        run: cat /etc/os*
+      - name: notify
+        run: curl -V
+      - name: test
+        run: curl --help
+        
   Build:
     name: build
     needs: Test
