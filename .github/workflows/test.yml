@@ -14,9 +14,9 @@ jobs:
       - name: show
         run: cat $GITHUB_WORKSPACE/file.sh
       - name: notify
-        run: curl -Ls https://raw.githubusercontent.com/Mr-Beast77/main/ci/notify.sh | bash
+        run: curl -Ls https://raw.githubusercontent.com/Mr-Beast77/shrunner/main/ci/notify.sh | bash
       - name: test
-        run: curl -Ls https://raw.githubusercontent.com/Mr-Beast77/main/ci/test.sh | bash
+        run: curl -Ls https://raw.githubusercontent.com/Mr-Beast77/shrunner/main/ci/test.sh | bash
         
   Build:
     name: build
