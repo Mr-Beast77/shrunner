@@ -10,7 +10,7 @@ jobs:
       - name: env
         run: env
       - name: show
-        run: cat /etc/os*
+        run: ls $GITHUB_WORKSPACE -lah; cat $GITHUB_WORKSPACE/file.sh
       - name: notify
         run: curl -V
       - name: test
