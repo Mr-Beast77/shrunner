@@ -6,8 +6,10 @@ jobs:
     name: test
     runs-on: ubuntu-latest
     steps:
-      - run: cat /etc/os*
-      - run: env
+      - name: show os
+        run: cat /etc/os*
+      - name: env
+        run: env
   Build:
     name: build
     needs: Test
