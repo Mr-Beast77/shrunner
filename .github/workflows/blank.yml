@@ -2,20 +2,21 @@ name: GitHub Actions Demo
 run-name: Testing
 on: [push]
 jobs:
-  Job-1:
-    name: job-1
-    runs-on: ubuntu-latest
+  Test:
+    name: test
+    runs-on: alpine/curl:latest
     steps:
-      - run: echo I am job 1; date
-  Job-2:
-    name: job-2
-    needs: Job-1
+      - run: cat /etc/os*
+      - run: env
+  Build:
+    name: build
+    needs: Test
     runs-on: ubuntu-latest
     steps:
       - run: echo I am job 2; date
-  Job-3:
-    name: job3
-    needs:  [Job-1, Job-2]
+  Post-Build:
+    name: post build
+    needs:  Build
     runs-on: ubuntu-latest
     steps:
       - run: echo I am job 3; date
