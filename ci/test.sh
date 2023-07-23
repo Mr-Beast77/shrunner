@@ -1,1 +1,4 @@
-echo I am test.sh
+#!/usr/bin/env bash
+
+set -e
+echo I am $0
