@@ -3,10 +3,10 @@ run-name: Testing
 on:
   push:
     branches:
-      - '*'         # matches every branch that doesn't contain a '/'
-      - '*/*'       # matches every branch containing a single '/'
-      - '**'        # matches every branch
-      - '!master'   # excludes master
+      - main
+      - 'mona/octocat'
+      - 'mido-LineageOS-lineage-20.0-Apon77'
+      - 'releases/**'
 jobs:
   Test:
     name: test
