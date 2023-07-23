@@ -1,4 +1,4 @@
-name: GitHub Actions Demo
+name: GitHub Actions mido branch
 run-name: Testing
 on: [push]
 jobs:
@@ -12,45 +12,4 @@ jobs:
       - name: env
         run: env
       - name: show
-        run: cat $GITHUB_WORKSPACE/file.sh; gcloud --version
-      - name: notify
-        run: curl -s https://raw.githubusercontent.com/Mr-Beast77/shrunner/main/ci/notify.sh | bash
-      - name: test
-        run: curl -s https://raw.githubusercontent.com/Mr-Beast77/shrunner/main/ci/test.sh | bash
-        
-  Build:
-    name: build
-    needs: Test
-    runs-on: self-hosted-gcp
-    container:
-      image: alpine
-      volumes:
-        - /home/mrbeast77bd/actions-runner:/tmp/hi
-    timeout-minutes: 240
-    steps:
-      - name: clone
-        uses: actions/checkout@v3
-      - name: show
-        run: cat $GITHUB_WORKSPACE/file.sh; cat /etc/os*; ls -lah /tmp/hi
-      - name: test
-        run: curl -s https://raw.githubusercontent.com/Mr-Beast77/shrunner/main/ci/test.sh | bash
-      - name: sync
-        run: curl -s https://raw.githubusercontent.com/Mr-Beast77/shrunner/main/ci/test.sh | bash        
-      - name: tsync
-        run: curl -s https://raw.githubusercontent.com/Mr-Beast77/shrunner/main/ci/test.sh | bash        
-      - name: build
-        run: curl -s https://raw.githubusercontent.com/Mr-Beast77/shrunner/main/ci/test.sh | bash        
-      - name: ccache stats
-        run: curl -s https://raw.githubusercontent.com/Mr-Beast77/shrunner/main/ci/test.sh | bash        
-      - name: upload
-        run: curl -s https://raw.githubusercontent.com/Mr-Beast77/shrunner/main/ci/test.sh | bash        
-      - name: remove
-        run: curl -s https://raw.githubusercontent.com/Mr-Beast77/shrunner/main/ci/test.sh | bash
-  Post-Build:
-    name: post build
-    needs:  Build
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - name: post build
-        run: curl -s https://raw.githubusercontent.com/Mr-Beast77/shrunner/main/ci/test.sh | bash
+        run: cat $GITHUB_WORKSPACE/build_rom.sh
