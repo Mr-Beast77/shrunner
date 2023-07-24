@@ -2,7 +2,8 @@ name: GitHub Actions Demo
 run-name: Testing
 on:
   push:
-    branches: ['main' , 'master' ]
+    branches: ['main' , 'mido2' ]
+  pull_request:
 jobs:
   Test:
     name: test
