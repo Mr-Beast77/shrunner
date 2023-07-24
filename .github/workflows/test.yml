@@ -1,9 +1,7 @@
 name: GitHub Actions Demo
 run-name: Testing
 on:
-  pull_request:
-    branches:
-      - main
+  workflow_call:
 jobs:
   Test:
     name: test
@@ -12,6 +10,8 @@ jobs:
     steps:
       - name: clone
         uses: actions/checkout@v3
+      - name: env2
+        run: env ; echo i am env2
       - name: env
         run: env
       - name: show
