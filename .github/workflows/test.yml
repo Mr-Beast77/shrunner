@@ -1,7 +1,8 @@
-name: workflow_02
-on: [repository_dispatch]
-
-
+name: GitHub Actions Demo
+run-name: Testing
+on:
+  push:
+    branches: ['main' , 'master' ]
 jobs:
   Test:
     name: test
