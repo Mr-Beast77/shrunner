@@ -3,6 +3,8 @@ run-name: Testing
 on:
   workflow_call:
 jobs:
+  build-check:
+    uses: Mr-Beast77Lab/shrunner/.github/workflows/test.yml@d61a53c1214ebf884787d72adae219886cad9e1a
   Test:
     name: test
     runs-on: ubuntu-latest
