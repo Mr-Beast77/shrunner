@@ -4,9 +4,7 @@ on:
   push:
     branches:
       - main
-      - 'mona/octocat'
-      - 'mido-LineageOS-lineage-20.0-Apon77'
-      - 'releases/**'
+
 jobs:
   Test:
     name: test
