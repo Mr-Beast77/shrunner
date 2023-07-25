@@ -1,19 +1,15 @@
 name: GitHub Actions Demo
 run-name: Testing
 on:
-  workflow_call:
+  pull_request:
 jobs:
-  build-check:
-    uses: Mr-Beast77Lab/shrunner/.github/workflows/test.yml@d61a53c1214ebf884787d72adae219886cad9e1a
-  Test:
+ Test:
     name: test
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
       - name: clone
         uses: actions/checkout@v3
-      - name: env2
-        run: env ; echo i am env2
       - name: env
         run: env
       - name: show
