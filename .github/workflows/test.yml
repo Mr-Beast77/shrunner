@@ -3,7 +3,7 @@ run-name: Testing
 on:
   pull_request:
 jobs:
- Test:
+  Test:
     name: test
     runs-on: ubuntu-latest
     timeout-minutes: 5
